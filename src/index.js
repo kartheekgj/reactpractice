@@ -8,7 +8,7 @@ import InputRefComponent from "./components/InputRefApp";
 import NotFoundPage from "./components/NotFoundPage";
 import DynamicForms from "./components/dynamicformsApp";
 import MoviesApp from "./components/MoviesApp";
-
+import GridSelectApp from "./components/GridSelectApp";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const routes = [
@@ -36,6 +36,9 @@ const routes = [
       {
         path: "/moviesapp",
         element: <MoviesApp />,
+      },{
+        path: "/gridselect",
+        element: <GridSelectApp />,
       },
     ],
   },

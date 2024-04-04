@@ -29,6 +29,10 @@ function App() {
       link: "/moviesapp",
       pageName: "Movies App",
     },
+    {
+      link: "/gridselect",
+      pageName: "Grid Select App",
+    },
   ];
   return (
     <div>
