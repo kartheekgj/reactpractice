@@ -9,6 +9,7 @@ import NotFoundPage from "./components/NotFoundPage";
 import DynamicForms from "./components/dynamicformsApp";
 import MoviesApp from "./components/MoviesApp";
 import GridSelectApp from "./components/GridSelectApp";
+import ToDoApp from "./components/TodoApplication";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const routes = [
@@ -39,6 +40,9 @@ const routes = [
       },{
         path: "/gridselect",
         element: <GridSelectApp />,
+      },{
+        path: "/todo",
+        element: <ToDoApp />,
       },
     ],
   },
