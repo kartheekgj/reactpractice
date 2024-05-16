@@ -1,12 +1,3 @@
-const a = 10;
-
-function b() {
-  console.log(a); 
-  const a = 11;
-}
-b();
-
-console.log(a);
 
 console.log(1);
 setTimeout(()=>{
