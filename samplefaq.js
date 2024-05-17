@@ -21,21 +21,6 @@ promise.then(()=>{
 //1 5 3 2 6 4
 
 
-const arrayData = [[1,2],3,[4,[5,6]],7];
-export default function flatten(value) {
-  const result = [];
-  value.forEach(data =>{
-      if(Array.isArray(data)){
-        result.push(...flatten(data));
-      }else{
-        result.push(data);
-      }
-    });
-
-  return result;
-
-}
-
 export default function promiseAll(iterable) {
   return new Promise((resolve, reject) =>{
     let unresolved = iterable.length;
@@ -62,6 +47,48 @@ export default function promiseAll(iterable) {
     })
   });
 }
+
+
+const arrayData = [[1,2],3,[4,[5,6]],7];
+export default function flatten(value) {
+  const result = [];
+  value.forEach(data =>{
+      if(Array.isArray(data)){
+        result.push(...flatten(data));
+      }else{
+        result.push(data);
+      }
+    });
+
+  return result;
+
+}
+
+/*
+ClosureSum(10,5)
+ClosureSum(10,5.8,9,15,69,12)
+ClosureSum(10)(5)
+ClosureSum(2)(3,7,9,12,17)
+*/
+
+function ClosureSum(){
+  var total = 0;
+  var args1 = Array.prototype.slice.call(arguments);
+  args1.forEach(function(val){
+    total+= val;
+  });
+  return function innerSum(){
+    var args2 = Array.prototype.slice.call(arguments);
+    args2.forEach(function(val){
+      total+= val;
+    });
+    return total;
+    
+  }
+   return total;
+}
+
+console.log(ClosureSum(10)(2,3,4,5));
 
 export default function debounce(func, wait) {
   let timerId = null;
