@@ -64,6 +64,16 @@ export default function flatten(value) {
 
 }
 
+var fnSum = function(a){
+  return function(b){
+    if(b){
+      return fnSum(a*b);
+    }
+    return a;
+  }
+}
+console.log(fnSum(1)(2)(3)(4)());
+
 /*
 ClosureSum(10,5)
 ClosureSum(10,5.8,9,15,69,12)
